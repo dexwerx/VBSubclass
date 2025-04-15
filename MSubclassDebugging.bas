@@ -1,5 +1,5 @@
 Attribute VB_Name = "MSubclass"
-' Copyright © 2017 Dexter Freivald. All Rights Reserved. DEXWERX.COM
+' Copyright Â© 2017 Dexter Freivald. All Rights Reserved. DEXWERX.COM
 '
 ' MSubclassDebugging.bas
 '
@@ -60,9 +60,9 @@ Private Function SubclassProc(ByVal hWnd As Long, _
     
     If uMsg = WM_NCDESTROY Then
         ' We still pass WM_NCDESTROY to the subclass proc, before removing ourselves
-        SubclassProc = uIdSubclass.SubclassProc(hWnd, uMsg, wParam, lParam, dwRefData)
+        'SubclassProc = uIdSubclass.SubclassProc(hWnd, uMsg, wParam, lParam, dwRefData)
         RemoveSubclass hWnd, uIdSubclass
-        'SubclassProc = DefSubclassProc(hWnd, uMsg, wParam, lParam)
+        SubclassProc = DefSubclassProc(hWnd, uMsg, wParam, lParam)
         Exit Function
     End If
     
